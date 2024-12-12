@@ -5,45 +5,6 @@ import { PluginTypes } from "./plugins/types"
 import { SocialImageOptions } from "./util/og"
 import { Theme } from "./util/theme"
 
-export type Analytics =
-  | null
-  | {
-      provider: "plausible"
-      host?: string
-    }
-  | {
-      provider: "google"
-      tagId: string
-    }
-  | {
-      provider: "umami"
-      websiteId: string
-      host?: string
-    }
-  | {
-      provider: "goatcounter"
-      websiteId: string
-      host?: string
-      scriptSrc?: string
-    }
-  | {
-      provider: "posthog"
-      apiKey: string
-      host?: string
-    }
-  | {
-      provider: "tinylytics"
-      siteId: string
-    }
-  | {
-      provider: "cabin"
-      host?: string
-    }
-  | {
-      provider: "clarity"
-      projectId?: string
-    }
-
 export interface GlobalConfiguration {
   pageTitle: string
   pageTitleSuffix?: string
@@ -51,8 +12,6 @@ export interface GlobalConfiguration {
   enableSPA: boolean
   /** Whether to display Wikipedia-style popovers when hovering over links */
   enablePopovers: boolean
-  /** Analytics mode */
-  analytics: Analytics
   /** Glob patterns to not search */
   ignorePatterns: string[]
   /** Whether to use created, modified, or published as the default type of date */
